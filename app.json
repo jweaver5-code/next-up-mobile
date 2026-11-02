@@ -1,17 +1,20 @@
 {
   "expo": {
-    "name": "next-up-mobile",
+    "name": "NextUp",
     "slug": "next-up-mobile",
+    "scheme": "nextup",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nextup.mobile"
     },
     "android": {
+      "package": "com.nextup.mobile",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0c0c10",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -19,6 +22,21 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-image",
+      "expo-web-browser",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "NextUp uses a photo you choose as your profile picture."
+        }
+      ]
+    ],
+    "extra": {
+      "apiUrl": "https://next-up.capstone.uamishub.com"
     }
   }
 }
